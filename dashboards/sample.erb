@@ -1,15 +1,20 @@
-<% content_for :title do %>My super sweet dashboard<% end %>
+<script type='text/javascript'>
+$(function() {
+Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1}]')
+});
+</script>
+<% content_for :title do %>Scott and Jennys Dashboard<% end %>
 <div class="gridster">
   <ul>
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
+      <div data-id="welcome" data-view="Text" data-title="Hello" data-text="Jenny and Scotts home Dashboard" data-moreinfo="For all things Jenny and Scott"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="synergy" data-view="Meter" data-title="Synergy" data-min="0" data-max="100"></div>
+      <div data-id="synergy" data-view="Clock" data-title="Time"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Buzzwords" data-moreinfo="# of times said around the office"></div>
     </li>
 
@@ -17,9 +22,18 @@
       <div data-id="valuation" data-view="Number" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#ff9618"></div>
-    </li>
+		<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+		  <div data-id="aww" data-view="RandomAww"></div>
+		</li>
+		
+		<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+			<div data-id="yahoo_stock_quote_aapl" data-view="Number" data-title="Apple" style="background-color:#666666;" data-prefix="$"></div>
+		</li>
+				
+		<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+			<div data-id="yahoo_stock_quote_goog" data-view="Number" data-title="Google" style="background-color:#0432ef;" data-prefix="$"></div>
+		</li>
+		
   </ul>
   <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>
 </div>
