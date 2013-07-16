@@ -3,7 +3,7 @@ require 'json'
  
 placeholder = '/assets/nyantocat.gif'
  
-SCHEDULER.every '10s', first_in: 0 do |job|
+SCHEDULER.every '60s', first_in: 0 do |job|
   http = Net::HTTP.new('www.reddit.com')
   response = http.request(Net::HTTP::Get.new("/r/aww.json"))
   json = JSON.parse(response.body)
